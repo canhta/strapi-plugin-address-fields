@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+      id-token: write # to sign code with GITHUB_TOKEN
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

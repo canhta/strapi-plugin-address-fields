@@ -23,9 +23,8 @@ module.exports = () => ({
 });
 ```
 
-### Additional Information
+## Additional Information
 
-The address options are based on [SimpleMaps](https://simplemaps.com)
+At this time (2022-08-02), the plugin only supports [Vietnam](https://simplemaps.com/data/vn-cities) and [Japan](https://simplemaps.com/data/ja-cities)
 
-- [For Vietnam](https://simplemaps.com/data/vn-cities)
-- [For Japan](https://simplemaps.com/data/ja-cities)
+The address options are based on [SimpleMaps](https://simplemaps.com).
