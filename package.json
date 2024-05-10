@@ -1,70 +1,51 @@
 {
-  "name": "strapi-plugin-address-fields",
-  "version": "1.0.1",
-  "description": "A Strapi plugin that allows you to select address fields (country, prefecture, city)",
-  "keywords": ["strapi", "strapi plugin"],
-  "homepage": "https://github.com/canhta/strapi-plugin-address-fields#readme",
-  "bugs": {
-    "url": "https://github.com/canhta/strapi-plugin-address-fields/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/canhta/strapi-plugin-address-fields.git"
-  },
+  "name": "address-fields",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
   "license": "MIT",
-  "author": "Canh Ta <canh.tc98@gmail.com>",
-  "type": "commonjs",
-  "exports": {
-    "./package.json": "./package.json",
-    "./strapi-admin": {
-      "source": "./admin/src/index.js",
-      "import": "./dist/admin/index.mjs",
-      "require": "./dist/admin/index.js",
-      "default": "./dist/admin/index.js"
-    },
-    "./strapi-server": {
-      "source": "./server/src/index.ts",
-      "import": "./dist/server/index.mjs",
-      "require": "./dist/server/index.js",
-      "default": "./dist/server/index.js"
-    }
+  "author": {
+    "name": "A Strapi developer"
   },
-  "files": [
-    "dist",
-    "./strapi-server.js"
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
   ],
   "scripts": {
-    "build": "strapi plugin:build",
-    "verify": "strapi plugin:verify",
-    "watch": "strapi plugin:watch",
-    "watch:link": "strapi plugin:watch:link",
-    "prepublish": "echo \"y\" | npm run build && npm run verify",
-    "publish": "npm publish --access public"
+    "build": "tsc -p tsconfig.server.json",
+    "develop": "tsc -p tsconfig.server.json -w"
   },
   "dependencies": {
-    "@strapi/design-system": "^1.18.0",
-    "@strapi/helper-plugin": "^4.24.1",
-    "@strapi/icons": "^1.18.0"
+    "@strapi/design-system": "^1.6.3",
+    "@strapi/helper-plugin": "^4.6.0",
+    "@strapi/icons": "^1.6.3",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@strapi/strapi": "^4.24.1",
-    "prettier": "^3.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@strapi/typescript-utils": "^4.6.0",
+    "@types/react": "^17.0.53",
+    "@types/react-dom": "^18.0.28",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.32",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.6",
+    "typescript": "5.0.4"
   },
   "peerDependencies": {
-    "@strapi/strapi": "^4.24.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1"
   },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
   "strapi": {
-    "kind": "plugin",
     "name": "address-fields",
-    "displayName": "Address Fields",
-    "description": "A Strapi plugin that allows you to select address fields (country, prefecture, city)"
+    "description": "Description of test plugin",
+    "kind": "plugin"
   }
 }
