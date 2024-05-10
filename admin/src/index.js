@@ -36,11 +36,11 @@ export default {
                   name: 'required',
                   type: 'checkbox',
                   intlLabel: {
-                    id: 'test1',
+                    id: `${PLUGIN_ID}.option.label`,
                     defaultMessage: 'Required field',
                   },
                   description: {
-                    id: 'test2',
+                    id: `${PLUGIN_ID}.option.description`,
                     defaultMessage: "You won't be able to create an entry if this field is empty",
                   },
                 },
