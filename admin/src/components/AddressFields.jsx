@@ -60,7 +60,7 @@ export default function AddressFields({ onChange, labelAction, value, name, attr
         postCode: value,
       });
       const tokens = [currentValue?.prefectureId, currentValue?.id, value];
-      const updatedValue = tokens.some((it) => !!it) ? undefined : tokens.join(delim);
+      const updatedValue = tokens.some((it) => !it) ? undefined : tokens.join(delim);
 
       onChange({
         target: {
