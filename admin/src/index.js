@@ -1,15 +1,16 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin';
-import { PLUGIN_ID } from './pluginId';
+
 import { Initializer } from './components/Initializer';
 import { PluginIcon } from './components/PluginIcon';
-
+import { PLUGIN_ID } from './pluginId';
 export default {
   register(app) {
     app.customFields.register([
       {
         name: 'address',
         pluginId: PLUGIN_ID,
-        type: 'json',
+        type: 'string',
+
         intlLabel: {
           id: `${PLUGIN_ID}.address.label`,
           defaultMessage: 'Address',
@@ -19,11 +20,33 @@ export default {
           defaultMessage: 'Select address',
         },
         icon: PluginIcon,
+
         components: {
-          Input: async () =>
-            import(
-              /* webpackChunkName: "address-fields-component" */ './components/AddressFields'
-            ),
+          Input: async () => import(/* webpackChunkName: "address-fields-component" */ './components/AddressFields'),
+        },
+        options: {
+          advanced: [
+            {
+              sectionTitle: {
+                id: 'global.settings',
+                defaultMessage: 'Settings',
+              },
+              items: [
+                {
+                  name: 'required',
+                  type: 'checkbox',
+                  intlLabel: {
+                    id: `${PLUGIN_ID}.option.label`,
+                    defaultMessage: 'Required field',
+                  },
+                  description: {
+                    id: `${PLUGIN_ID}.option.description`,
+                    defaultMessage: "You won't be able to create an entry if this field is empty",
+                  },
+                },
+              ],
+            },
+          ],
         },
       },
     ]);
@@ -53,7 +76,7 @@ export default {
               locale,
             };
           });
-      })
+      }),
     );
 
     return importedTranslations;
