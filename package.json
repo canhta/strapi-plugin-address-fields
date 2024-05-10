@@ -1,6 +1,6 @@
 {
     "name": "strapi-plugin-address-fields",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A Strapi plugin that allows you to select address fields (country, prefecture, city)",
     "keywords": ["strapi", "strapi plugin"],
     "homepage": "https://github.com/canhta/strapi-plugin-address-fields#readme",
