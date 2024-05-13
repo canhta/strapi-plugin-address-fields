@@ -98,7 +98,7 @@ export default function AddressFields({ onChange, labelAction, value, name, attr
     >
       <Flex gap={4} direction="column" alignItems="stretch" col={12}>
         <Box>
-          <FieldLabel action={labelAction}>{name}</FieldLabel>
+          <FieldLabel action={labelAction}>{'地域'}</FieldLabel>
         </Box>
 
         <Flex gap={6} justifyContent="between" col={12}>
